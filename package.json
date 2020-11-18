@@ -2,7 +2,8 @@
     "name": "heroes-app",
     "version": "1.0.0",
     "scripts": {
-        "start": "webpack-dev-server --mode development --open"
+        "start": "webpack-dev-server --mode development --open",
+        "test": "karma start"
     },
     "dependencies": {
         "@angular/common": "^7.2.16",
@@ -13,16 +14,33 @@
         "@angular/platform-browser-dynamic": "^7.2.16",
         "@angular/router": "^7.2.16",
         "core-js": "^3.7.0",
+        "requirejs": "^2.3.6",
         "rxjs": "^6.6.3",
         "zone.js": "^0.11.3"
     },
     "devDependencies": {
+        "@babel/core": "^7.12.3",
+        "@babel/preset-env": "^7.12.1",
         "@types/node": "^11.15.36",
         "angular2-template-loader": "^0.6.2",
+        "babel-loader": "^8.2.1",
+        "css-loader": "^5.0.1",
+        "file-loader": "^6.2.0",
         "html-webpack-plugin": "^3.2.0",
+        "karma": "^5.2.3",
+        "karma-chrome-launcher": "^3.1.0",
+        "karma-mocha": "^2.0.1",
+        "karma-requirejs": "^1.1.0",
+        "karma-sourcemap-loader": "^0.3.8",
+        "karma-webpack": "^4.0.2",
+        "mocha": "^8.2.1",
+        "node-sass": "^5.0.0",
         "raw-loader": "^1.0.0",
+        "sass-loader": "^10.1.0",
+        "style-loader": "^2.0.0",
         "ts-loader": "^5.4.5",
         "typescript": "^3.9.7",
+        "url-loader": "^4.1.1",
         "webpack": "^4.44.2",
         "webpack-cli": "^3.3.12",
         "webpack-dev-server": "^3.11.0"
