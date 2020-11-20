@@ -1,7 +1,9 @@
-// Karma configuration
-// Generated on Wed Nov 18 2020 00:48:37 GMT-0500 (Colombia Standard Time)
-
-const packConfig = require("./webpack.config.js");
+const path = require('path');
+const webpackConfig = require("./webpack.config.js");
+var entry = path.resolve(webpackConfig.context, webpackConfig.entry);
+var preprocessors = {}; 
+preprocessors[entry] = ['webpack'];
+preprocessors['**/*.html'] = ['ng-html2js'];
 
 module.exports = function(config) {
   config.set({
@@ -12,12 +14,13 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha'],
+    frameworks: ['mocha', 'chai'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      { pattern: 'test/main.js', watched: false }
+      //{ pattern: 'test/main.js', watched: false }
+      entry
     ],
 
 
@@ -28,10 +31,11 @@ module.exports = function(config) {
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-      'test/main.js': ['webpack','sourcemap']
-    },
-    webpack: packConfig,
+    // preprocessors: {
+    //   'test/main.js': ['webpack']
+    // },
+    preprocessors: preprocessors,
+    webpack: webpackConfig,
 
 
     // test results reporter to use
@@ -56,6 +60,13 @@ module.exports = function(config) {
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
 
+    ngHtml2JsPreprocessor: { 
+      stripPrefix: 'src/app/', 
+      moduleName: 'my.templates' 
+    },
+
+
+    reporters: ['mocha'],
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
@@ -66,8 +77,13 @@ module.exports = function(config) {
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false,
 
-    // Concurrency level
-    // how many browser should be started simultaneous
-    concurrency: Infinity
+    plugins: [
+      require('karma-webpack'),
+      'karma-chai',
+      'karma-mocha',
+      'karma-chrome-launcher',
+      'karma-ng-html2js-preprocessor',
+      'karma-mocha-reporter'
+  ]
   })
 }
