@@ -2,8 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-    context: __dirname + '/src',
-    entry: './main.ts',
+    entry: './src/main.ts',
     resolve: {
         extensions: ['.ts', '.js']
     },
@@ -12,14 +11,22 @@ module.exports = {
             {
                 test: /\.ts$/,
                 use: ['ts-loader', 'angular2-template-loader']
+            },
+            { 
+                test: /\.(ts|js)$/, 
+                loaders: ['angular-router-loader'] 
             },      
             {
                 test: /\.js$/,
                 exclude: /'node_modules'/,
                 loader: 'babel-loader'
             },
+            { 
+                test: /\.html$/, 
+                use: 'html-loader' 
+            },
             {
-                test: /\.(html|css)$/,
+                test: /\.css$/,
                 use: 'raw-loader'
             },
             {
@@ -39,6 +46,9 @@ module.exports = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({ template: './index.html' })
-    ]
+        new HtmlWebpackPlugin({ template: './src/index.html' })
+    ],
+    devServer: {
+        historyApiFallback: false
+    }
 }
