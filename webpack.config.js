@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = {
     entry: './src/main.ts',
     resolve: {
-        extensions: ['.ts', '.js']
+        extensions: ['.ts', '.js', '.html']
     },
     module: {
         rules: [

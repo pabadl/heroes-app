@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HeroesDashboardComponent } from './heroes-dashboard/heroes-dashboard.component';
 
 const heroesRoutes: Routes = [
-    {path: '', component: HeroesDashboardComponent}
+    { path: '', component: HeroesDashboardComponent }
 ];
 
 @NgModule({
