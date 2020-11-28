@@ -1,7 +1,27 @@
 {
     "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "noImplicitAny": false,
+        "sourceMap": true,
+        "baseUrl": "src",
+        "outDir": "./dist",
+        "declaration": false,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "target": "ES5"
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "lib": [
+            "es2016",
+            "dom"
+        ],
+        "types": [
+            "node",
+            "mocha"
+        ]
+    },
+    "awesomeTypeScriptLoaderOptions": {
+        "useWebpackText": true
     }
 }
