@@ -13,6 +13,7 @@
         "@angular/platform-browser": "^7.2.16",
         "@angular/platform-browser-dynamic": "^7.2.16",
         "@angular/router": "^7.2.16",
+        "awesome-typescript-loader": "^5.2.1",
         "core-js": "^3.7.0",
         "requirejs": "^2.3.6",
         "rxjs": "^6.6.3",
@@ -53,6 +54,7 @@
         "url-loader": "^4.1.1",
         "webpack": "^4.44.2",
         "webpack-cli": "^3.3.12",
+        "to-string-loader": "^1.1.6",
         "webpack-dev-server": "^3.11.0"
     }
 }

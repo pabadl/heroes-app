@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = {
     entry: './src/main.ts',
     resolve: {
-        extensions: ['.ts', '.js', '.html']
+        extensions: ['.js', '.ts', '.html', '.scss']
     },
     module: {
         rules: [
@@ -29,14 +29,7 @@ module.exports = {
                 test: /\.css$/,
                 use: 'raw-loader'
             },
-            {
-                test: /\.(scss)$/,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'sass-loader'
-                ]
-            },
+            { test: /\.(s*)css$/, use: ['to-string-loader','style-loader','css-loader','sass-loader'] },
             {
                 test: /\.(png|jpg|gif)$/,
                 use: [
