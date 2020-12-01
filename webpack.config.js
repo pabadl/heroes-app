@@ -2,7 +2,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-    entry: './src/main.ts',
+    entry: {
+        main: './src/main.ts',
+        styles: './src/styles.scss'
+    },
     resolve: {
         extensions: ['.js', '.ts', '.html', '.scss']
     },
@@ -30,12 +33,7 @@ module.exports = {
                 use: 'raw-loader'
             },
             { test: /\.(s*)css$/, use: ['to-string-loader','style-loader','css-loader','sass-loader'] },
-            {
-                test: /\.(png|jpg|gif)$/,
-                use: [
-                    {loader: 'url-loader'}
-                ]
-            }
+            { test: /\.(jpe?g|png|gif|svg)$/i, loader: 'file-loader' }
         ]
     },
     plugins: [
