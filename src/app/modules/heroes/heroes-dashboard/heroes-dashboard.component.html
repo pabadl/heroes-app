@@ -1,85 +1,17 @@
 <div class="container">
     <div class="box">
-        <div class="heroe-box" (click)="redirectToHeroeDetails(1)">
+        <div  *ngFor="let heroe of heroes" class="heroe-box" (click)="redirectToHeroeDetails(heroe._id)">
             <div class="heroe-avatar-box">
-                <img class="heroe-avatar" src="../../../../assets/img/capitan-america.jpg" alt="Avatar">
+                <img class="heroe-avatar" [src]="heroe._picture" alt="Avatar">
                 <div class="heroe-number">
-                    <p>1st</p>
+                    <p>{{heroe._id}}</p>
                 </div>
             </div>
             <div class="heroe-info">
-                <h3>Capitan America</h3>
-                <p>Steve Rogers</p>
-                <p>Estaura: 1.90mt</p>
+                <h3>{{heroe._nickname}}</h3>
+                <p>{{heroe._name}}</p>
+                <p>Estaura: {{heroe._height}}</p>
             </div>   
-        </div>
-        <div class="heroe-box" (click)="redirectToHeroeDetails(1)">
-            <div class="heroe-avatar-box">
-                <img class="heroe-avatar" src="../../../../assets/img/capitan-america.jpg" alt="Avatar">
-                <div class="heroe-number">
-                    <p>1st</p>
-                </div>
-            </div>
-            <div class="heroe-info">
-                <h3>Capitan America</h3>
-                <p>Steve Rogers</p>
-                <p>Estaura: 1.90mt</p>
-            </div>   
-        </div>
-        <div class="heroe-box" (click)="redirectToHeroeDetails(1)">
-            <div class="heroe-avatar-box">
-                <img class="heroe-avatar" src="../../../../assets/img/capitan-america.jpg" alt="Avatar">
-                <div class="heroe-number">
-                    <p>1st</p>
-                </div>
-            </div>
-            <div class="heroe-info">
-                <h3>Capitan America</h3>
-                <p>Steve Rogers</p>
-                <p>Estaura: 1.90mt</p>
-            </div>   
-        </div>
-        <div class="heroe-box" (click)="redirectToHeroeDetails(1)">
-            <div class="heroe-avatar-box">
-                <img class="heroe-avatar" src="../../../../assets/img/capitan-america.jpg" alt="Avatar">
-                <div class="heroe-number">
-                    <p>1st</p>
-                </div>
-            </div>
-            <div class="heroe-info">
-                <h3>Capitan America</h3>
-                <p>Steve Rogers</p>
-                <p>Estaura: 1.90mt</p>
-            </div>   
-        </div>
-        <div class="heroe-box" (click)="redirectToHeroeDetails(1)">
-            <div class="heroe-avatar-box">
-                <img class="heroe-avatar" src="../../../../assets/img/capitan-america.jpg" alt="Avatar">
-                <div class="heroe-number">
-                    <p>1st</p>
-                </div>
-            </div>
-            <div class="heroe-info">
-                <h3>Capitan America</h3>
-                <p>Steve Rogers</p>
-                <p>Estaura: 1.90mt</p>
-            </div>   
-        </div>
-        <div class="heroe-box" (click)="redirectToHeroeDetails(1)">
-            <div class="heroe-avatar-box">
-                <img class="heroe-avatar" src="../../../../assets/img/capitan-america.jpg" alt="Avatar">
-                <div class="heroe-number">
-                    <p>1st</p>
-                </div>
-            </div>
-            <div class="heroe-info">
-                <h3>Capitan America</h3>
-                <p>Steve Rogers</p>
-                <p>Estaura: 1.90mt</p>
-            </div>   
-        </div>
-        
-        
-        
+        </div>  
     </div>
 </div>
