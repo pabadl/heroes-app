@@ -1,11 +1,11 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { HeroesDashboardComponent } from './heroes-dashboard/heroes-dashboard.component';
-import { HeroeDetailComponent } from './heroe-details/heroe-details.component';
+import { HeroDetailsComponent } from './hero-details/hero-details.component';
 
 const heroesRoutes: Routes = [
     { path: '', component: HeroesDashboardComponent },
-    { path: ':id/details', component: HeroeDetailComponent },
+    { path: ':id/details', component: HeroDetailsComponent },
 ];
 
 @NgModule({

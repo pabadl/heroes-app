@@ -9,6 +9,7 @@ import { ServicesModule } from './core/services/services.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers } from './store/app.reducers';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [AppComponent],
@@ -21,6 +22,7 @@ import { reducers } from './store/app.reducers';
         StoreDevtoolsModule.instrument({
             maxAge: 25, // Retains last 25 states
         }),
+        ReactiveFormsModule
     ],
     exports: [],
     providers: [],

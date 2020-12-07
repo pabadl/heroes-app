@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { HeroeModel } from '../models/heroe.model'
+import { HeroModel } from '../models/hero.model'
 
 export enum HeroeActionTypes {
     SET_HEROES = 'Set Heroes',
@@ -7,7 +7,7 @@ export enum HeroeActionTypes {
 
 export class SetHeroes implements Action {
     readonly type = HeroeActionTypes.SET_HEROES;
-    constructor(public payload: HeroeModel[]) {
+    constructor(public payload: HeroModel[]) {
     }
 }
 

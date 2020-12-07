@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HeroesService } from '../../../core/services/heroes.service';
-import { HeroeModel } from '../../../models/heroe.model';
+import { HeroModel } from '../../../models/hero.model';
 import { Store } from '@ngrx/store';
 import * as HeroeActions from './../../../store/heroe.actions';
 import { IHeroesState } from '../../../store/heroe.reducers';
@@ -14,7 +14,7 @@ import { AppState } from '../../../store/app.reducers';
 })
 export class HeroesDashboardComponent implements OnInit{
 
-    heroes: HeroeModel[] = [];
+    heroes: HeroModel[] = [];
 
     constructor(private router: Router,
                 private heroesService: HeroesService,
@@ -29,7 +29,7 @@ export class HeroesDashboardComponent implements OnInit{
         //     );
         // }else{
             //console.log('2');
-            this.heroesService.getHeroes().subscribe((resp: HeroeModel[]) =>{
+            this.heroesService.getHeroes().subscribe((resp: HeroModel[]) =>{
                 this.heroes = resp;
                 console.log(this.heroes);
                 //this.store.dispatch(new HeroeActions.SetHeroes(this.heroes));
@@ -37,7 +37,7 @@ export class HeroesDashboardComponent implements OnInit{
        // }       
     }
     
-    redirectToHeroeDetails(heroeId: number){
+    redirectToHeroDetails(heroeId: number){
         this.router.navigate(['heroes', heroeId, 'details']);
     }
 }

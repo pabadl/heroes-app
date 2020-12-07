@@ -1,13 +1,13 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { map } from 'rxjs/operators';
-import { HeroeModel } from "../../models/heroe.model";
+import { HeroModel } from "../../models/hero.model";
 
 @Injectable()
 export class HeroesService {
     private url = 'https://udem.herokuapp.com/heroes';
 
-    heroes: HeroeModel[] = [];
+    heroes: HeroModel[] = [];
 
     constructor(private http: HttpClient) {}
 
@@ -15,9 +15,9 @@ export class HeroesService {
         let idTemporal = 1;
         return this.http.get(this.url)
                         .pipe(
-                            map((resp:HeroeModel[]) => {
+                            map((resp:HeroModel[]) => {
                                 this.heroes = resp;                           
-                                this.heroes.forEach((heroe: HeroeModel) => {
+                                this.heroes.forEach((heroe: HeroModel) => {
                                     heroe._id = idTemporal;
                                     idTemporal = idTemporal + 1;   
                                 });

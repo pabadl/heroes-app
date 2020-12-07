@@ -1,8 +1,8 @@
-import { HeroeModel } from '../models/heroe.model'
+import { HeroModel } from '../models/hero.model'
 import {HeroeActions, HeroeActionTypes} from './heroe.actions'
 
 export interface IHeroesState {
-  heroes: HeroeModel[];
+  heroes: HeroModel[];
   state: string;
 }
 
