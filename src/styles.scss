@@ -1,5 +1,5 @@
 body {
-    background-image: url(../src/assets/img/marvel-big-screen.jpg);
+    background-image: url(../src/assets/img/avengers.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -21,6 +21,6 @@ h1 {
 
 @media only screen and (max-width: 700px) {
     body {
-        background-image: url(../src/assets/img/marvel.jpg);
+        background-image: url(../src/assets/img/avengers.jpg);
     }
 }

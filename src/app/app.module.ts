@@ -6,6 +6,9 @@ import { HeroesModule } from './modules/heroes/heroes.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HeroesDashboardComponent } from './modules/heroes/heroes-dashboard/heroes-dashboard.component';
 import { ServicesModule } from './core/services/services.module';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { reducers } from './store/app.reducers';
 
 @NgModule({
     declarations: [AppComponent],
@@ -13,7 +16,11 @@ import { ServicesModule } from './core/services/services.module';
         BrowserModule,
         CommonModule, 
         AppRoutingModule,
-        ServicesModule
+        ServicesModule,
+        StoreModule.forRoot(reducers),
+        StoreDevtoolsModule.instrument({
+            maxAge: 25, // Retains last 25 states
+        }),
     ],
     exports: [],
     providers: [],

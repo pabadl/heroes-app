@@ -1,0 +1,92 @@
+/* Variables */
+$hoverBgColor : #ff3b3b;
+$hoverBgColor2: #ffffff;
+
+.container{
+    display: flex;
+    justify-content: center;
+    padding: 100px 100px;
+}
+
+.form {
+    background: rgba(255, 255, 255, 0.8);
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-content: space-between;
+    justify-content: center;
+    flex-direction: column;
+    padding: 25px;
+    font-family: sans-serif;
+
+    .form-header {
+        margin: 0 0 40px;
+    
+        h1 {
+          padding: 4px 0;
+          color: rgba(#000000, 0.6);;
+          font-size: 24px;
+          text-transform: uppercase;
+          letter-spacing: .1em;
+        }
+    }
+
+    .form-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0 0 20px;
+
+        label {
+            display: block;
+            margin: 0 0 10px;
+            color: rgba(#000000, 0.6);;
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: .2em;
+        }
+
+        input {
+            outline: none;
+            display: block;
+            background: #ffffff;
+            width: 100%;
+            border: 0;
+            border-radius: 4px;
+            box-sizing: border-box;
+            padding: 12px 20px;
+            line-height: inherit;
+        }
+
+        button {
+            outline: none;
+            background: linear-gradient(130deg, $hoverBgColor 0%, $hoverBgColor2 100%);
+            box-shadow: 0px 0px 5px #000000;
+            width: 100%;
+            border: 0;
+            border-radius: 4px;
+            padding: 12px 20px;
+            text-transform: uppercase;
+            margin: 10px 0;
+            letter-spacing: .1em;
+            color: rgba(#000000, 0.6);
+            cursor: pointer;
+            &:active {
+                transform: translateY(4px);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .container{
+        display: flex;
+        justify-content: center;
+        padding: 100px 10px;
+    }
+
+    .form {
+        width: 100%;
+    }
+}
