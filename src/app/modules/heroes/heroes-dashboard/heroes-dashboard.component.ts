@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 import { HeroesService } from '../../../core/services/heroes.service';
 import { HeroModel } from '../../../models/hero.model';
 import { Store } from '@ngrx/store';
-import * as HeroeActions from './../../../store/heroe.actions';
-import { IHeroesState } from '../../../store/heroe.reducers';
+import * as HeroActions from '../../../store/hero.actions';
+import { IHeroState } from '../../../store/hero.reducers';
 import { AppState } from '../../../store/app.reducers';
 
 @Component({
@@ -15,6 +15,7 @@ import { AppState } from '../../../store/app.reducers';
 export class HeroesDashboardComponent implements OnInit{
 
     heroes: HeroModel[] = [];
+    error: any;
 
     constructor(private router: Router,
                 private heroesService: HeroesService,
@@ -29,12 +30,19 @@ export class HeroesDashboardComponent implements OnInit{
         //     );
         // }else{
             //console.log('2');
-            this.heroesService.getHeroes().subscribe((resp: HeroModel[]) =>{
-                this.heroes = resp;
-                console.log(this.heroes);
-                //this.store.dispatch(new HeroeActions.SetHeroes(this.heroes));
-            })
-       // }       
+            // this.heroesService.getHeroes().subscribe((resp: HeroModel[]) =>{
+            //     this.heroes = resp;
+            //     console.log(this.heroes);
+            //     //this.store.dispatch(new HeroeActions.SetHeroes(this.heroes));
+            // })
+       // }
+        this.store.select('heroState').subscribe(data => {
+            this.heroes = data.heroes;
+            this.error = data.error;
+        });
+        if (!this.heroes){
+            this.store.dispatch(new HeroActions.LoadHeroes());
+        }      
     }
     
     redirectToHeroDetails(heroeId: number){

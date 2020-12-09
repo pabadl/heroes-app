@@ -1,10 +1,10 @@
 import { ActionReducerMap } from "@ngrx/store";
-import * as heroeReducers from './heroe.reducers';
+import * as heroReducers from './hero.reducers';
 
 export interface AppState {
-    heroesState: heroeReducers.IHeroesState;
+    heroState: heroReducers.IHeroState;
 }
 
 export const reducers: ActionReducerMap<AppState> = {
-    heroesState: heroeReducers.reducer
+    heroState: heroReducers.reducer
 };
