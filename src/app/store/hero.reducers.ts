@@ -1,5 +1,6 @@
 import { HeroModel } from '../models/hero.model'
 import {HeroActions, HeroActionTypes} from './hero.actions'
+import * as _ from 'lodash';
 
 export interface IHeroState {
   heroes: HeroModel[];
@@ -29,6 +30,7 @@ export function reducer(state = initialState, action: HeroActions) {
         error: action.payload
       };
     case HeroActionTypes.UPDATE_HEROE:
+      //const heroe _.find(heroes, hero => hero._id == heroeId);
       return {
         ...state, 
         hero: action.hero

@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { map } from 'rxjs/operators';
 import { HeroModel } from "../../models/hero.model";
+import * as _ from 'lodash';
 
 @Injectable()
 export class HeroesService {
@@ -24,5 +25,9 @@ export class HeroesService {
                                 return this.heroes;
                             })
                         );
+    }
+
+    getHeroById(heroes: HeroModel[], heroeId: string) {
+        return _.find(heroes, hero => hero._id == heroeId);
     }
 }

@@ -22,20 +22,6 @@ export class HeroesDashboardComponent implements OnInit{
                 private store: Store<AppState>) {}
     
     ngOnInit(): void {
-        // if(this.heroes.length > 0){
-        //     console.log('1');
-        //     this.store.select('heroesState').subscribe(data => {
-        //         this.heroes = data.heroes;
-        //       }
-        //     );
-        // }else{
-            //console.log('2');
-            // this.heroesService.getHeroes().subscribe((resp: HeroModel[]) =>{
-            //     this.heroes = resp;
-            //     console.log(this.heroes);
-            //     //this.store.dispatch(new HeroeActions.SetHeroes(this.heroes));
-            // })
-       // }
         this.store.select('heroState').subscribe(data => {
             this.heroes = data.heroes;
             this.error = data.error;
