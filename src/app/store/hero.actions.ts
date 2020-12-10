@@ -5,7 +5,7 @@ export enum HeroActionTypes {
     LOAD_HEROES = '[Heroes] Load Heroes',
     SET_HEROES = '[Heroes] Set Heroes',
     LOAD_HEROES_ERROR = '[Heroes] Load Heroes Error',
-    UPDATE_HEROE = '[Heroes] Update Heroe',
+    EDIT_HERO = '[Heroes] Edit Hero',
 }
 
 export class LoadHeroes implements Action {
@@ -20,9 +20,9 @@ export class LoadHeroesError implements Action {
     constructor(public payload: any ) {}
 }
 
-export class UpdateHeroe implements Action {
-    readonly type = HeroActionTypes.UPDATE_HEROE;
+export class EditHero implements Action {
+    readonly type = HeroActionTypes.EDIT_HERO;
     constructor(public hero: HeroModel) {}
 }
 
-export type HeroActions = LoadHeroes | SetHeroes | LoadHeroesError | UpdateHeroe;
+export type HeroActions = LoadHeroes | SetHeroes | LoadHeroesError | EditHero;

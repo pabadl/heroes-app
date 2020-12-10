@@ -44,9 +44,9 @@ export class HeroDetailsComponent implements OnInit {
     }
 
     editHero(){
-        console.log(this.form);
         if (this.form.valid){
-            this.store.dispatch(new HeroActions.UpdateHeroe(this.hero));
+            this.hero = {...this.hero, ...this.form.value};
+            this.store.dispatch(new HeroActions.EditHero(this.hero));
             this.router.navigate(['/heroes']);
         }
     }
