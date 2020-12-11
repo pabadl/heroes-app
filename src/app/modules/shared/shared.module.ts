@@ -1,13 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeroesDashboardComponent } from './heroes-dashboard/heroes-dashboard.component';
-import { HeroesRoutesModule } from './heroes.routes';
-import { HeroDetailsComponent } from './hero-details/hero-details.component';
-import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { NavbarComponent } from './navbar/navbar.component';
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -16,18 +12,13 @@ export function createTranslateLoader(http: HttpClient) {
 
 @NgModule({
     declarations: [
-        HeroesDashboardComponent,
-        HeroDetailsComponent
+        NavbarComponent
     ],   
     exports: [
-        HeroesDashboardComponent,
-        HeroDetailsComponent
+        NavbarComponent
     ],
     imports: [ 
         CommonModule,
-        HeroesRoutesModule,
-        RouterModule,
-        ReactiveFormsModule,
         HttpClientModule,
         TranslateModule.forChild({
             loader: {
@@ -38,4 +29,4 @@ export function createTranslateLoader(http: HttpClient) {
         })
     ],
 })
-export class HeroesModule {}
+export class SharedModule {}

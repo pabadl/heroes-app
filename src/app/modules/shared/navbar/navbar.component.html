@@ -1,0 +1,8 @@
+<div class="navbar">
+    <div class=".navbar-language-dropdown">
+        <label>{{ 'navbar.language' | translate }} </label>
+        <select #langSelect (change)="translate.use(langSelect.value)">
+            <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+        </select>
+    </div>
+</div>

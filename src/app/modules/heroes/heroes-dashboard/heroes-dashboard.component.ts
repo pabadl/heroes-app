@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HeroesService } from '../../../core/services/heroes.service';
 import { HeroModel } from '../../../models/hero.model';
 import { Store } from '@ngrx/store';
 import * as HeroActions from '../../../store/hero.actions';
-import { IHeroState } from '../../../store/hero.reducers';
 import { AppState } from '../../../store/app.reducers';
 
 @Component({
@@ -18,7 +16,6 @@ export class HeroesDashboardComponent implements OnInit{
     error: any;
 
     constructor(private router: Router,
-                private heroesService: HeroesService,
                 private store: Store<AppState>) {}
     
     ngOnInit(): void {

@@ -1,0 +1,15 @@
+{
+  "navbar": {
+    "language": "Language"
+  },
+  "heroes-dashboard": {
+    "height": "Height"
+  },
+  "hero-details": {
+    "hero-details": "Hero Details",
+    "nickname": "Nickname",
+    "name": "Name",
+    "height": "Height",
+    "edit": "Edit"
+  }
+}

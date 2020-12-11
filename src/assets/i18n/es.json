@@ -1,0 +1,15 @@
+{
+  "navbar": {
+    "language": "Lenguaje"
+  },
+  "heroes-dashboard": {
+    "height": "Estatura"
+  },
+  "hero-details": {
+    "hero-details": "Detalles del heroe",
+    "nickname": "Apodo",
+    "name": "Nombre",
+    "height": "Estatura",
+    "edit": "Editar"
+  }
+}

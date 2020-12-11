@@ -2,22 +2,22 @@
 <div class="container">
     <form class="form" [formGroup]="form" autocomplete="off" (ngSubmit)="editHero()">
         <div class="form-header">
-            <h1>Heroe Details</h1>
+            <h1>{{ 'hero-details.hero-details' | translate }}</h1>
         </div>
         <div class="form-group">
-            <label>Nickname</label>
+            <label>{{ 'hero-details.nickname' | translate }}</label>
             <input type="text" formControlName="_nickname">
         </div>
         <div class="form-group">
-            <label>Name</label>
+            <label>{{ 'hero-details.name' | translate }}</label>
             <input type="text" formControlName="_name">
         </div>
         <div class="form-group">
-            <label>Height</label>
+            <label>{{ 'hero-details.height' | translate }}</label>
             <input type="text" formControlName="_height">
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary w-100">Edit</button>
+            <button type="submit" class="btn btn-primary w-100">{{ 'hero-details.edit' | translate }}</button>
         </div>         
     </form>
 </div>
