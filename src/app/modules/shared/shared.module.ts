@@ -4,6 +4,8 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NavbarComponent } from './navbar/navbar.component';
+import { HeightFormatPipe } from './pipes/height-format.pipe';
+import { IdFormatPipe } from './pipes/id-format.pipe';
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -12,10 +14,14 @@ export function createTranslateLoader(http: HttpClient) {
 
 @NgModule({
     declarations: [
-        NavbarComponent
+        NavbarComponent,
+        HeightFormatPipe,
+        IdFormatPipe
     ],   
     exports: [
-        NavbarComponent
+        NavbarComponent,
+        HeightFormatPipe,
+        IdFormatPipe
     ],
     imports: [ 
         CommonModule,

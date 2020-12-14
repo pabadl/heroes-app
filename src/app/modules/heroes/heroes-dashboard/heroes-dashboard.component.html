@@ -4,13 +4,13 @@
             <div class="heroe-avatar-box">
                 <img class="heroe-avatar" [src]="heroe._picture" alt="Avatar">
                 <div class="heroe-number">
-                    <p>{{heroe._id}}</p>
+                    <p>{{heroe._id | idFormat}}</p>
                 </div>
             </div>
             <div class="heroe-info">
                 <h3>{{heroe._nickname}}</h3>
                 <p>{{heroe._name}}</p>
-                <p>{{ 'heroes-dashboard.height' | translate }}: {{heroe._height}}</p>
+                <p>{{ 'heroes-dashboard.height' | translate }}: {{heroe._height | heightFormat}}</p>
             </div>   
         </div>  
     </div>

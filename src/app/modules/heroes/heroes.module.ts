@@ -10,6 +10,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HeroRatingComponent } from './hero-details/hero-rating/hero-rating.component';
+import { SharedModule } from '../shared/shared.module';
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -34,6 +35,7 @@ export function createTranslateLoader(http: HttpClient) {
         ReactiveFormsModule,
         HttpClientModule,
         FontAwesomeModule,
+        SharedModule,
         TranslateModule.forChild({
             loader: {
                 provide: TranslateLoader,
