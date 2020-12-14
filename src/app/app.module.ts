@@ -15,8 +15,6 @@ import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { SharedModule } from './modules/shared/shared.module';
 
-
-
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
     return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');

@@ -30,7 +30,6 @@ export function reducer(state = initialState, action: HeroActions) {
         error: action.payload
       };
     case HeroActionTypes.EDIT_HERO:
-      debugger;
       let editedheroes: HeroModel[] = state.heroes.map(hero => {
         if (hero._id == action.hero._id) hero = action.hero;
         return hero;

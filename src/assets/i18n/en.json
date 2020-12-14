@@ -10,6 +10,7 @@
     "nickname": "Nickname",
     "name": "Name",
     "height": "Height",
+    "rating": "Hero rating",
     "edit": "Edit"
   }
 }

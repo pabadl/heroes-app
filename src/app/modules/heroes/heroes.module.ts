@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -29,6 +30,7 @@ export function createTranslateLoader(http: HttpClient) {
         RouterModule,
         ReactiveFormsModule,
         HttpClientModule,
+        FontAwesomeModule,
         TranslateModule.forChild({
             loader: {
                 provide: TranslateLoader,

@@ -6,6 +6,7 @@ import { HeroesService } from '../../../core/services/heroes.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../../store/app.reducers';
 import * as HeroActions from '../../../store/hero.actions';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'app-heroe-details',
@@ -18,6 +19,7 @@ export class HeroDetailsComponent implements OnInit {
     heroId: string;
     heroes: HeroModel[] = [];
     hero: HeroModel;
+    starIcon = faStar;
 
     constructor(private route: ActivatedRoute,
                 private heroesService: HeroesService,

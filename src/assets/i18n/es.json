@@ -6,10 +6,11 @@
     "height": "Estatura"
   },
   "hero-details": {
-    "hero-details": "Detalles del heroe",
+    "hero-details": "Detalles del héroe",
     "nickname": "Apodo",
     "name": "Nombre",
     "height": "Estatura",
+    "rating": "Calificación del héroe",
     "edit": "Editar"
   }
 }
