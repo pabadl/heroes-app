@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HeroModel } from '../../../models/hero.model';
 import { HeroesService } from '../../../core/services/heroes.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../../store/app.reducers';
 import * as HeroActions from '../../../store/hero.actions';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'app-heroe-details',
@@ -19,7 +18,6 @@ export class HeroDetailsComponent implements OnInit {
     heroId: string;
     heroes: HeroModel[] = [];
     hero: HeroModel;
-    starIcon = faStar;
 
     constructor(private route: ActivatedRoute,
                 private heroesService: HeroesService,
@@ -41,11 +39,13 @@ export class HeroDetailsComponent implements OnInit {
         this.form = new FormGroup({
             _nickname: new FormControl('', [Validators.required]),
             _name: new FormControl('', [Validators.required]),
-            _height: new FormControl('', [Validators.required])
+            _height: new FormControl('', [Validators.required]),
+            _rating: new FormControl('', [Validators.required]),
         });
     }
 
     editHero(){
+        console.log(this.form.value)
         if (this.form.valid){
             this.hero = {...this.hero, ...this.form.value};
             this.store.dispatch(new HeroActions.EditHero(this.hero));

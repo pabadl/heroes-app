@@ -45,6 +45,7 @@ $hoverBgColor2: #ffffff;
             line-height: 1;
             text-transform: uppercase;
             letter-spacing: .2em;
+            width: 100%;
         }
 
         input {
@@ -104,7 +105,7 @@ $hoverBgColor2: #ffffff;
                     transition: 1s all;
                     transform: rotate(360deg);
                 } 
-              }
+            }
         }
     }
 }

@@ -18,34 +18,7 @@
         </div>
         <div class="form-group">
             <label>{{ 'hero-details.rating' | translate }}</label>
-            <div class="rating">
-                <input id="radio1" type="radio" name="estrellas" value="1">
-                <label for="radio1">
-                    <fa-icon [icon]="starIcon"></fa-icon>    
-                </label>
-
-                <input id="radio2" type="radio" name="estrellas" value="2">
-                <label for="radio2">
-                    <fa-icon [icon]="starIcon"></fa-icon>
-                </label>
-
-                <input id="radio3" type="radio" name="estrellas" value="3">
-                <label for="radio3">
-                    <fa-icon [icon]="starIcon"></fa-icon>
-                </label>
-
-                <input id="radio4" type="radio" name="estrellas" value="4">
-                <label for="radio4">
-                    <fa-icon [icon]="starIcon"></fa-icon>
-                </label>
-
-                <input id="radio5" type="radio" name="estrellas" value="5">
-                <label for="radio5">
-                    <fa-icon [icon]="starIcon"></fa-icon>
-                </label>
-            </div>
-
-
+            <app-hero-rating formControlName="_rating"></app-hero-rating>
         </div>
         <div class="form-group">
             <button type="submit" class="submit-button btn btn-primary w-100">{{ 'hero-details.edit' | translate }}</button>

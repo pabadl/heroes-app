@@ -1,0 +1,29 @@
+.rating{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    width: 100%;
+
+    input{
+        display: none;
+        &:checked ~ label {
+            color: orange;
+        }
+    }
+
+    label {
+        color: grey;
+        padding: 0 2px;
+        &:hover{
+            color:orange;
+            cursor: pointer;
+            transition: 1s all;
+            transform: rotate(360deg);
+        }
+        &:hover ~ label {
+            color: orange;
+            transition: 1s all;
+            transform: rotate(360deg);
+        } 
+    }
+}
