@@ -6,6 +6,7 @@ import { HeroesService } from '../../../core/services/heroes.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../../store/app.reducers';
 import * as HeroActions from '../../../store/hero.actions';
+import { HeroNameValidators } from '../../shared/validators/hero-name.validator';
 
 @Component({
     selector: 'app-heroe-details',
@@ -22,8 +23,9 @@ export class HeroDetailsComponent implements OnInit {
     constructor(private route: ActivatedRoute,
                 private heroesService: HeroesService,
                 private store: Store<AppState>,
-                private router: Router) {
-        this.createForm();
+                private router: Router,
+                private validators: HeroNameValidators) {   
+                this.createForm();
     }
 
     ngOnInit(): void{
@@ -38,14 +40,14 @@ export class HeroDetailsComponent implements OnInit {
     createForm(){
         this.form = new FormGroup({
             _nickname: new FormControl('', [Validators.required]),
-            _name: new FormControl('', [Validators.required]),
+            _name: new FormControl('', [Validators.required], this.validators.nameValidator()),
             _height: new FormControl('', [Validators.required]),
             _rating: new FormControl('', [Validators.required]),
         });
     }
 
     editHero(){
-        console.log(this.form.value)
+        console.log(this.form)
         if (this.form.valid){
             this.hero = {...this.hero, ...this.form.value};
             this.store.dispatch(new HeroActions.EditHero(this.hero));
