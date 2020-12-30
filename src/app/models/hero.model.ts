@@ -4,4 +4,5 @@ export class HeroModel {
     _height: string;
     _picture: string;
     _nickname: string;
+    _power: string;
 }

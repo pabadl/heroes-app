@@ -4,6 +4,7 @@ import { HeroModel } from '../../../models/hero.model';
 import { Store } from '@ngrx/store';
 import * as HeroActions from '../../../store/hero.actions';
 import { AppState } from '../../../store/app.reducers';
+import { HeroesService } from '../../../core/services/heroes.service';
 
 @Component({
     selector: 'app-heroes-dashboard',
@@ -16,9 +17,14 @@ export class HeroesDashboardComponent implements OnInit{
     error: any;
 
     constructor(private router: Router,
-                private store: Store<AppState>) {}
+                private store: Store<AppState>,
+                private heroService: HeroesService) {}
     
     ngOnInit(): void {
+        // this.heroService.getHeroesPowers().subscribe(
+        //     val => console.log(val)
+        // );
+
         this.store.select('heroState').subscribe(data => {
             this.heroes = data.heroes;
             this.error = data.error;

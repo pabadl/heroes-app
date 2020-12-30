@@ -3,13 +3,15 @@
     "language": "Language"
   },
   "heroes-dashboard": {
-    "height": "Height"
+    "height": "Height",
+    "power": "Power"
   },
   "hero-details": {
     "hero-details": "Hero Details",
     "nickname": "Nickname",
     "name": "Name",
     "height": "Height",
+    "power": "Power",
     "rating": "Hero rating",
     "edit": "Edit"
   }

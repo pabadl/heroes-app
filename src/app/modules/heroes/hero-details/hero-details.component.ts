@@ -43,6 +43,7 @@ export class HeroDetailsComponent implements OnInit {
             _name: new FormControl('', [Validators.required], this.validators.nameValidator()),
             _height: new FormControl('', [Validators.required]),
             _rating: new FormControl('', [Validators.required]),
+            _power: new FormControl('', [Validators.required]),
         });
     }
 

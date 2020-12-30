@@ -3,13 +3,15 @@
     "language": "Lenguaje"
   },
   "heroes-dashboard": {
-    "height": "Estatura"
+    "height": "Estatura",
+    "power": "Poder"
   },
   "hero-details": {
     "hero-details": "Detalles del héroe",
     "nickname": "Apodo",
     "name": "Nombre",
     "height": "Estatura",
+    "power": "Poder",
     "rating": "Calificación del héroe",
     "edit": "Editar"
   }
