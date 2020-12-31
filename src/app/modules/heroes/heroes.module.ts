@@ -4,7 +4,7 @@ import { HeroesDashboardComponent } from './heroes-dashboard/heroes-dashboard.co
 import { HeroesRoutesModule } from './heroes.routes';
 import { HeroDetailsComponent } from './hero-details/hero-details.component';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -32,6 +32,7 @@ export function createTranslateLoader(http: HttpClient) {
         CommonModule,
         HeroesRoutesModule,
         RouterModule,
+        FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
         FontAwesomeModule,

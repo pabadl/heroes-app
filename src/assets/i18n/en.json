@@ -1,6 +1,7 @@
 {
   "navbar": {
-    "language": "Language"
+    "language": "Language",
+    "favorite": "Favorite Hero"
   },
   "heroes-dashboard": {
     "height": "Height",
@@ -8,6 +9,7 @@
   },
   "hero-details": {
     "hero-details": "Hero Details",
+    "favorite": "Favorite Hero",
     "nickname": "Nickname",
     "name": "Name",
     "height": "Height",

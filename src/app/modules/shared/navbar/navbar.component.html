@@ -1,8 +1,13 @@
 <div class="navbar">
-    <div class=".navbar-language-dropdown">
-        <label>{{ 'navbar.language' | translate }} </label>
-        <select #langSelect (change)="translate.use(langSelect.value)">
-            <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
-        </select>
+    <div class="navbar-group">
+        <div class=".navbar-language-dropdown">
+            <label class="navbar-label">{{ 'navbar.language' | translate }} </label>
+            <select #langSelect (change)="translate.use(langSelect.value)">
+                <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+            </select>
+        </div>
+    </div>
+    <div *ngIf="favoriteHero$ | async" class="navbar-group">
+        <label class="navbar-label">{{ 'navbar.favorite' | translate }}: {{favoriteHero$ | async}} </label>
     </div>
 </div>

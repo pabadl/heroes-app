@@ -5,11 +5,13 @@ import * as _ from 'lodash';
 export interface IHeroState {
   heroes: HeroModel[];
   error: any;
+  favoriteHero: number;
 }
 
 const initialState: IHeroState = {
   heroes: null,
-  error: null
+  error: null,
+  favoriteHero: null
 }
 
 export function reducer(state = initialState, action: HeroActions) {
@@ -37,6 +39,11 @@ export function reducer(state = initialState, action: HeroActions) {
       return {
         ...state, 
         heroes: editedheroes
+      };
+    case HeroActionTypes.SET_FAVORITE_HERO:
+      return {
+        ...state, 
+        favoriteHero: action.heroId
       };
     default:
       return state;

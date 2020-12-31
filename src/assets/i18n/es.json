@@ -1,6 +1,7 @@
 {
   "navbar": {
-    "language": "Lenguaje"
+    "language": "Lenguaje",
+    "favorite": "Héroe Favorito"
   },
   "heroes-dashboard": {
     "height": "Estatura",
@@ -8,6 +9,7 @@
   },
   "hero-details": {
     "hero-details": "Detalles del héroe",
+    "favorite": "Héroe Favorito",
     "nickname": "Apodo",
     "name": "Nombre",
     "height": "Estatura",

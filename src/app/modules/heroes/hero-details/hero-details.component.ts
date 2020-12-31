@@ -7,6 +7,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../../../store/app.reducers';
 import * as HeroActions from '../../../store/hero.actions';
 import { HeroNameValidators } from '../../shared/validators/hero-name.validator';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'app-heroe-details',
@@ -15,10 +16,13 @@ import { HeroNameValidators } from '../../shared/validators/hero-name.validator'
 })
 export class HeroDetailsComponent implements OnInit {
 
+    starIcon = faStar;
     form: FormGroup;
     heroId: string;
     heroes: HeroModel[] = [];
     hero: HeroModel;
+    favoriteHero = false;
+    favoriteHeroId;
 
     constructor(private route: ActivatedRoute,
                 private heroesService: HeroesService,
@@ -32,6 +36,7 @@ export class HeroDetailsComponent implements OnInit {
         this.heroId = this.route.snapshot.paramMap.get('id');
         this.store.select('heroState').subscribe(data => {
             this.heroes = data.heroes;
+            if (data.favoriteHero && this.heroId === data.favoriteHero.toString()) this.favoriteHero = true;
             this.hero = this.heroesService.getHeroById(this.heroes,this.heroId);
             this.form.reset(this.hero);
         });
@@ -48,10 +53,14 @@ export class HeroDetailsComponent implements OnInit {
     }
 
     editHero(){
-        console.log(this.form)
+        console.log(this.favoriteHero);
         if (this.form.valid){
             this.hero = {...this.hero, ...this.form.value};
             this.store.dispatch(new HeroActions.EditHero(this.hero));
+            if(this.favoriteHero){
+                this.store.dispatch(new HeroActions.SetFavoriteHero(this.hero._id));
+                this.heroesService.setFavoriteHeroObservable(this.hero._nickname);
+            }
             this.router.navigate(['/heroes']);
         }
     }

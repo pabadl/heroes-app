@@ -2,7 +2,16 @@
 <div class="container">
     <form class="form" [formGroup]="form" autocomplete="off" (ngSubmit)="editHero()">
         <div class="form-header">
-            <h1>{{ 'hero-details.hero-details' | translate }}</h1>
+            <div class="form-title">{{ 'hero-details.hero-details' | translate }}</div>
+            <div class="favorite-hero">
+                <label class="favorite-hero-label">{{ 'hero-details.favorite' | translate }}</label>
+                <input class="input-star" id="star" type="radio" name="start" [(checked)]="favoriteHero" (click)="favoriteHero=!favoriteHero">
+                <label class="label-star" for="star">
+                    <fa-icon [icon]="starIcon"></fa-icon>    
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
         </div>
         <div class="form-group">
             <label>{{ 'hero-details.nickname' | translate }}</label>

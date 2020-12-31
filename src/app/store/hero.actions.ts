@@ -6,6 +6,7 @@ export enum HeroActionTypes {
     SET_HEROES = '[Heroes] Set Heroes',
     LOAD_HEROES_ERROR = '[Heroes] Load Heroes Error',
     EDIT_HERO = '[Heroes] Edit Hero',
+    SET_FAVORITE_HERO = '[Heroes] Set Favorite Hero',
 }
 
 export class LoadHeroes implements Action {
@@ -25,4 +26,9 @@ export class EditHero implements Action {
     constructor(public hero: HeroModel) {}
 }
 
-export type HeroActions = LoadHeroes | SetHeroes | LoadHeroesError | EditHero;
+export class SetFavoriteHero implements Action {
+    readonly type = HeroActionTypes.SET_FAVORITE_HERO;
+    constructor(public heroId: number) {}
+}
+
+export type HeroActions = LoadHeroes | SetHeroes | LoadHeroesError | EditHero | SetFavoriteHero;

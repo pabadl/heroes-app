@@ -21,14 +21,49 @@ $hoverBgColor2: #ffffff;
     font-family: sans-serif;
 
     .form-header {
-        margin: 0 0 40px;
-    
-        h1 {
-          padding: 4px 0;
-          color: rgba(#000000, 0.6);;
-          font-size: 24px;
-          text-transform: uppercase;
-          letter-spacing: .1em;
+        display: flex;
+        flex-direction:row;
+        align-items: center;
+        padding: 20px 0 40px 0;
+
+        .form-title {  
+            width: 70%;
+            color: rgba(#000000, 0.6);;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            margin-right: 20px;
+          }
+
+        .favorite-hero {
+            width: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            .favorite-hero-label { 
+                color: rgba(#000000, 0.6);;
+                text-transform: uppercase;
+                letter-spacing: .2em;
+            }
+
+            .input-star{
+                display: none;
+                &:checked ~ .label-star {
+                    color: orange;
+                }
+            }
+        
+            .label-star {
+                color: grey;
+                font-size: 25px;
+                &:hover{
+                    color:orange;
+                    cursor: pointer;
+                    transition: 1s all;
+                    transform: rotate(360deg);
+                }
+            }
         }
     }
 
@@ -110,7 +145,7 @@ $hoverBgColor2: #ffffff;
     }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
     .container{
         display: flex;
         justify-content: center;

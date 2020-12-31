@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { map, timeout, delay, concatMap } from 'rxjs/operators';
 import { HeroModel } from "../../models/hero.model";
 import * as _ from 'lodash';
-import { of } from "rxjs";
+import { of, BehaviorSubject } from "rxjs";
 import { HEROES_POWERS } from "../../modules/shared/constants/heroes-powers.constants";
 
 @Injectable()
@@ -12,7 +12,14 @@ export class HeroesService {
 
     heroes: HeroModel[] = [];
 
+    private favoriteHero: BehaviorSubject<string> = new BehaviorSubject('');
+    public favoriteHeroObservable$ = this.favoriteHero.asObservable();
+
     constructor(private http: HttpClient) {}
+
+    setFavoriteHeroObservable(heroName: string){
+        this.favoriteHero.next(heroName);
+    }
 
     getHeroes() {
         let idTemporal = 1;
@@ -26,12 +33,11 @@ export class HeroesService {
                                     hero._id = idTemporal;
                                     idTemporal = idTemporal + 1;
                                     let power = _.find(powers, power => power.heroId == hero._id);
-                                    (power !== undefined) ? hero._power = power.power : hero._power = 'Not available';                      
+                                    (power !== undefined) ? hero._power = power.power : hero._power = 'NA';                      
                                 });
                                 return this.heroes;
                             })
-                        );
-                
+                        );       
             })
         )
     }
