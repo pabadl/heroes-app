@@ -16,9 +16,7 @@ export class HeroesDashboardComponent implements OnInit{
     heroes: HeroModel[] = [];
     error: any;
 
-    constructor(private router: Router,
-                private store: Store<AppState>,
-                private heroService: HeroesService) {}
+    constructor(private store: Store<AppState>) {}
     
     ngOnInit(): void {
         this.store.select('heroState').subscribe(data => {
@@ -28,9 +26,5 @@ export class HeroesDashboardComponent implements OnInit{
         if (!this.heroes){
             this.store.dispatch(new HeroActions.LoadHeroes());
         }      
-    }
-    
-    redirectToHeroDetails(heroeId: number){
-        this.router.navigate(['heroes', heroeId, 'details']);
     }
 }

@@ -1,0 +1,14 @@
+<div class="heroe-box" (click)="redirectToHeroDetails(hero._id)">
+    <div class="heroe-avatar-box">
+        <img class="heroe-avatar" [src]="hero._picture" alt="Avatar">
+        <div class="heroe-number">
+            <p>{{hero._id | idFormat}}</p>
+        </div>
+    </div>
+    <div class="heroe-info">
+        <h3>{{hero._nickname}}</h3>
+        <p>{{hero._name}}</p>
+        <p>{{ 'heroes-dashboard.height' | translate }}: {{hero._height | heightFormat}}</p>
+        <p>{{ 'heroes-dashboard.power' | translate }}: {{hero._power}}</p>
+    </div>   
+</div>

@@ -9,13 +9,14 @@
     display: flex;
     justify-content: flex-start;
     font-family: sans-serif;
-    
-    .navbar-language-dropdown{
-        background: rgb(194, 14, 14);
-    }
 
     .navbar-group{
         margin: 0 20px;
+
+        .navbar-language-dropdown{
+            background: rgb(194, 14, 14);
+        }
+
         .navbar-label{
             color: rgba(#ffffff, 0.6);;
             letter-spacing: .1em;
