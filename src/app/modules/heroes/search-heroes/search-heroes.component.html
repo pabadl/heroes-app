@@ -1,5 +1,11 @@
+<app-go-to-dashboard-button></app-go-to-dashboard-button>
 <div class="container">
     <div class="box">
         <app-hero-card [hero]="hero" *ngFor="let hero of heroesFound"></app-hero-card>
+        <div *ngIf="!heroesFound?.length" class="no-results-message">{{ 'search-heroes.no-results' | translate }} 
+            <span class="search-term">
+                {{searchParam}}
+            </span>
+        </div>
     </div>
 </div>

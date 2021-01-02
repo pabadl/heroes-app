@@ -16,5 +16,9 @@
     "power": "Poder",
     "rating": "Calificación del héroe",
     "edit": "Editar"
-  }
+  },
+  "search-heroes":{
+    "no-results": "No se encontraron resultados con el término:"
+  },
+  "go-to-dashboard":"Ir al listado de héroes"
 }

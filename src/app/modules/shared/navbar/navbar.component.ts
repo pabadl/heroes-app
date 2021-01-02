@@ -30,7 +30,7 @@ export class NavbarComponent implements OnInit{
     }
 
     searchHero(searchTerm){
-        const debounced = _.debounce(param => this.router.navigate(['heroes/search', param.target.value]), 1000);
-        debounced(searchTerm);
+        let searchValue = searchTerm.target.value;
+        if(searchValue.length > 2 || searchValue.length === 0 ) this.router.navigate(['heroes/search', searchTerm.target.value])
     }
 }

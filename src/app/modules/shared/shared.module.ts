@@ -6,6 +6,9 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HeightFormatPipe } from './pipes/height-format.pipe';
 import { IdFormatPipe } from './pipes/id-format.pipe';
+import { GoToDashboardButtonComponent } from './go-to-dasboard-button/go-to-dashboard-button.component';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -16,15 +19,19 @@ export function createTranslateLoader(http: HttpClient) {
     declarations: [
         NavbarComponent,
         HeightFormatPipe,
-        IdFormatPipe
+        IdFormatPipe,
+        GoToDashboardButtonComponent
     ],   
     exports: [
         NavbarComponent,
         HeightFormatPipe,
-        IdFormatPipe
+        IdFormatPipe,
+        GoToDashboardButtonComponent
     ],
     imports: [ 
         CommonModule,
+        RouterModule,
+        FormsModule,
         HttpClientModule,
         TranslateModule.forChild({
             loader: {

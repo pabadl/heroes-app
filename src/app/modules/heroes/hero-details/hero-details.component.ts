@@ -53,7 +53,6 @@ export class HeroDetailsComponent implements OnInit {
     }
 
     editHero(){
-        console.log(this.favoriteHero);
         if (this.form.valid){
             this.hero = {...this.hero, ...this.form.value};
             this.store.dispatch(new HeroActions.EditHero(this.hero));

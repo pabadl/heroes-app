@@ -8,6 +8,7 @@ $hoverBgColor2: #ffffff;
     font-weight: 400; 
     background:#ffffff;
     min-width: 375px;
+    min-height: 180px;
     margin: 15px 15px;
     border-radius: 8px;
     box-shadow: 2px 2px 0px 0px rgba(128, 128, 128,0.6);
@@ -89,6 +90,7 @@ $hoverBgColor2: #ffffff;
     .heroe-box{
         font-size: 13px;
         min-width: 310px;
+        min-height: 140px;
         margin: 5px 5px;
 
         .heroe-avatar-box{

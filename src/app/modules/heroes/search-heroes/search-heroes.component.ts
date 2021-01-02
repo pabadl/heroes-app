@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HeroModel } from '../../../models/hero.model';
 import { Store } from '@ngrx/store';
@@ -11,10 +11,11 @@ import { HeroesService } from '../../../core/services/heroes.service';
     templateUrl: './search-heroes.component.html',
     styleUrls: ['./search-heroes.component.scss']
 })
-export class SearchHeroesComponent implements OnInit{
+export class SearchHeroesComponent implements OnInit {
 
     storedHeroes: HeroModel[] = [];
     heroesFound: HeroModel[] = [];
+    searchParam: string;
 
     constructor(private store: Store<AppState>,
                 private heroesService: HeroesService,
@@ -29,8 +30,8 @@ export class SearchHeroesComponent implements OnInit{
 
     searchHeroes(){
         this.activatedRoute.params.subscribe(params => {
-            this.heroesFound= this.heroesService.getHeroByName(this.storedHeroes, params.param);
-            console.log(this.heroesFound);
+            this.searchParam = params.param;
+            this.heroesFound= this.heroesService.getHeroByName(this.storedHeroes, this.searchParam);
         });
     }
 }

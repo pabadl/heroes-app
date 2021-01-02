@@ -26,7 +26,6 @@ export class HeroRatingComponent implements OnInit , ControlValueAccessor {
     }
 
     rateHero(value){
-        console.log(value);
         this.value = value;
         this.onTouch();
         this.onChange(this.value);

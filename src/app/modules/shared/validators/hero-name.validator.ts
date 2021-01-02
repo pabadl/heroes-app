@@ -41,7 +41,6 @@ import { HeroModel } from "../../../models/hero.model";
             .pipe(
               map(heroes => {
                 const hero = _.find(heroes.heroes, hero => hero._name === control.value);
-                console.log(hero);
                 // if username is already taken
                 if (hero!==undefined && control.pristine === false) {
                   // return error
