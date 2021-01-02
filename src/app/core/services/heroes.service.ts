@@ -46,6 +46,10 @@ export class HeroesService {
         return _.find(heroes, hero => hero._id == heroeId);
     }
 
+    getHeroByName(heroes: HeroModel[], param: string){
+        return _.filter(heroes, (hero:HeroModel) => hero._name.toLowerCase().includes(param.toLowerCase()));
+      }
+
     getHeroesPowers(){
         return of(HEROES_POWERS).pipe(
             delay(1000)

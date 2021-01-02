@@ -10,4 +10,7 @@
     <div *ngIf="favoriteHero$ | async" class="navbar-group">
         <label class="navbar-label">{{ 'navbar.favorite' | translate }}: {{favoriteHero$ | async}} </label>
     </div>
+    <div class="navbar-group">
+        <input class="form-field" type="search" placeholder="search" (keyup)="searchHero($event)">
+    </div>
 </div>

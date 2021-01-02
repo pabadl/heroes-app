@@ -12,6 +12,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HeroRatingComponent } from './hero-details/hero-rating/hero-rating.component';
 import { SharedModule } from '../shared/shared.module';
 import { HeroCardComponent } from './hero-card/hero-card.component';
+import { SearchHeroesComponent } from './search-heroes/search-heroes.component';
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -23,13 +24,15 @@ export function createTranslateLoader(http: HttpClient) {
         HeroesDashboardComponent,
         HeroDetailsComponent,
         HeroRatingComponent,
-        HeroCardComponent
+        HeroCardComponent,
+        SearchHeroesComponent
     ],   
     exports: [
         HeroesDashboardComponent,
         HeroDetailsComponent,
         HeroRatingComponent,
-        HeroCardComponent
+        HeroCardComponent,
+        SearchHeroesComponent
     ],
     imports: [ 
         CommonModule,

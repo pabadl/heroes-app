@@ -4,10 +4,10 @@ $hoverBgColor2: #ffffff;
 
 .heroe-box{
     font-family: sans-serif; 
-    font-size: 18px; 
+    font-size: 17px; 
     font-weight: 400; 
     background:#ffffff;
-    min-width: 370px;
+    min-width: 375px;
     margin: 15px 15px;
     border-radius: 8px;
     box-shadow: 2px 2px 0px 0px rgba(128, 128, 128,0.6);
@@ -49,20 +49,29 @@ $hoverBgColor2: #ffffff;
             align-items: center;
             justify-content: center;
             position: absolute;
-    
-            p{
-                color: #ffffff;
-                display: flex;
-            }
+            font-weight: bold;
+            color: #ffffff;
         }
     }
 
     .heroe-info{
+        width: 40%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
         margin: 15px 15px;
+
+        .heroe-nickname{
+            color: #fa0000;
+            font-weight: bold;
+            font-size: 19px;
+            margin: 5px 0;
+        }
+
+        .heroe-property{
+            color: #808080;
+        }
 
         h3{
             color: #fa0000;
@@ -72,6 +81,28 @@ $hoverBgColor2: #ffffff;
         p{
             color: #808080;
             line-height: 0px;  
+        }
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .heroe-box{
+        font-size: 13px;
+        min-width: 310px;
+        margin: 5px 5px;
+
+        .heroe-avatar-box{
+            margin: 15px 15px;
+    
+            .heroe-avatar{
+                width: 100%;
+                max-width: 100px;
+            }
+        
+            .heroe-number{
+                width: 40px;
+                height: 40px;
+            }
         }
     }
 }
