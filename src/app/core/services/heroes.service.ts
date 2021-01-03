@@ -14,11 +14,17 @@ export class HeroesService {
 
     private favoriteHero: BehaviorSubject<string> = new BehaviorSubject('');
     public favoriteHeroObservable$ = this.favoriteHero.asObservable();
+    private searchCriteria: BehaviorSubject<string> = new BehaviorSubject('');
+    public searchCriteriaObservable$ = this.searchCriteria.asObservable();
 
     constructor(private http: HttpClient) {}
 
     setFavoriteHeroObservable(heroName: string){
         this.favoriteHero.next(heroName);
+    }
+
+    setSearchCriteriaObservable(param: string){
+        this.searchCriteria.next(param);
     }
 
     getHeroes() {
@@ -45,7 +51,11 @@ export class HeroesService {
 
     getHeroByName(heroes: HeroModel[], param: string){
         return _.filter(heroes, (hero:HeroModel) => hero._name.toLowerCase().includes(param.toLowerCase()));
-      }
+    }
+
+    getHeroByNickName(heroes: HeroModel[], param: string){
+        return _.filter(heroes, (hero:HeroModel) => hero._nickname.toLowerCase().includes(param.toLowerCase()));
+    }
 
     getHeroesPowers(){
         return of(HEROES_POWERS).pipe(

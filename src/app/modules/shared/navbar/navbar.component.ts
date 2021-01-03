@@ -17,6 +17,7 @@ export class NavbarComponent implements OnInit{
     favoriteHero: HeroModel;
     heroId: number;
     favoriteHero$: Observable<string>;
+    searchCriteria = 'name';
 
     constructor(public translate: TranslateService,
                 private heroesService: HeroesService,
@@ -30,6 +31,7 @@ export class NavbarComponent implements OnInit{
     }
 
     searchHero(searchTerm){
+        this.heroesService.setSearchCriteriaObservable(this.searchCriteria);
         let searchValue = searchTerm.target.value;
         if(searchValue.length > 2 || searchValue.length === 0 ) this.router.navigate(['heroes/search', searchTerm.target.value])
     }

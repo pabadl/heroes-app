@@ -11,6 +11,10 @@
         <label class="navbar-label">{{ 'navbar.favorite' | translate }}: {{favoriteHero$ | async}} </label>
     </div>
     <div class="navbar-group">
+        <select [(ngModel)]="searchCriteria">
+            <option value="name">Name</option>
+            <option value="nickname">Nickname</option>
+          </select>
         <input id="search-hero-input" class="form-field" type="search" placeholder="search" (keyup)="searchHero($event)">
     </div>
 </div>
