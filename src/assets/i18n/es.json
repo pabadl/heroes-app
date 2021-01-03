@@ -15,7 +15,12 @@
     "height": "Estatura",
     "power": "Poder",
     "rating": "Calificación del héroe",
-    "edit": "Editar"
+    "edit": "Editar",
+    "form-validation-error":{
+      "generic":"es obligatorio",
+      "name": "es obligatorio y no puede existir",
+      "height": "es obligatorio y debe ser un número"
+    }
   },
   "search-heroes":{
     "no-results": "No se encontraron resultados con el término:"

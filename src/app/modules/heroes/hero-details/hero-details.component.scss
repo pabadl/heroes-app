@@ -95,6 +95,12 @@ $hoverBgColor2: #ffffff;
             line-height: inherit;
         }
 
+        .form-validation-error{
+            margin-top: 5px;
+            color: red;
+            width: 100%;
+        }
+
         .submit-button {
             outline: none;
             background: linear-gradient(130deg, $hoverBgColor 0%, $hoverBgColor2 100%);

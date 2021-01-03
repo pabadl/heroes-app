@@ -15,7 +15,12 @@
     "height": "Height",
     "power": "Power",
     "rating": "Hero rating",
-    "edit": "Edit"
+    "edit": "Edit",
+    "form-validation-error":{
+      "generic":"is mandatory",
+      "name": "is mandatory and can not exist",
+      "height": "is mandatory and must be a number"
+    }
   },
   "search-heroes":{
     "no-results": "There are not results with the term:"

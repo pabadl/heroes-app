@@ -8,6 +8,7 @@ import { AppState } from '../../../store/app.reducers';
 import * as HeroActions from '../../../store/hero.actions';
 import { HeroNameValidators } from '../../shared/validators/hero-name.validator';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { HeroHeightValidators } from '../../shared/validators/hero-height.validator';
 
 @Component({
     selector: 'app-heroe-details',
@@ -28,7 +29,8 @@ export class HeroDetailsComponent implements OnInit {
                 private heroesService: HeroesService,
                 private store: Store<AppState>,
                 private router: Router,
-                private validators: HeroNameValidators) {   
+                private heroNamevalidators: HeroNameValidators,
+                private heroHeightvalidators: HeroHeightValidators) {   
                 this.createForm();
     }
 
@@ -40,27 +42,38 @@ export class HeroDetailsComponent implements OnInit {
             this.hero = this.heroesService.getHeroById(this.heroes,this.heroId);
             this.form.reset(this.hero);
         });
+        if (!this.heroes){
+            this.store.dispatch(new HeroActions.LoadHeroes());
+        }   
     }
 
     createForm(){
         this.form = new FormGroup({
             _nickname: new FormControl('', [Validators.required]),
-            _name: new FormControl('', [Validators.required], this.validators.nameValidator()),
-            _height: new FormControl('', [Validators.required]),
+            _name: new FormControl('', [Validators.required], this.heroNamevalidators.nameValidator()),
+            _height: new FormControl('', [Validators.required, this.heroHeightvalidators.heightNumber]),
             _rating: new FormControl('', [Validators.required]),
             _power: new FormControl('', [Validators.required]),
         });
     }
 
+    formControlIsInvalid(formControlName: string){
+        return this.form.get(formControlName).invalid && this.form.get(formControlName).touched;
+    }
+
     editHero(){
-        if (this.form.valid){
-            this.hero = {...this.hero, ...this.form.value};
-            this.store.dispatch(new HeroActions.EditHero(this.hero));
-            if(this.favoriteHero){
-                this.store.dispatch(new HeroActions.SetFavoriteHero(this.hero._id));
-                this.heroesService.setFavoriteHeroObservable(this.hero._nickname);
-            }
-            this.router.navigate(['/heroes']);
+        if (this.form.invalid){
+            return Object.values(this.form.controls).forEach(control => {
+                control.markAsTouched();
+            });
         }
+        
+        this.hero = {...this.hero, ...this.form.value};
+        this.store.dispatch(new HeroActions.EditHero(this.hero));
+        if(this.favoriteHero){
+            this.store.dispatch(new HeroActions.SetFavoriteHero(this.hero._id));
+            this.heroesService.setFavoriteHeroObservable(this.hero._nickname);
+        }
+        this.router.navigate(['/heroes']);
     }
 }

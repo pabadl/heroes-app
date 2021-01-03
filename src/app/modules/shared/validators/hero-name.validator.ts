@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { AsyncValidatorFn, AbstractControl, FormControl } from "@angular/forms";
-import { Observable, of, from } from "rxjs";
+import { AsyncValidatorFn, AbstractControl, FormControl, ValidatorFn } from "@angular/forms";
+import { Observable, of, from, BehaviorSubject } from "rxjs";
 import { map } from "rxjs/operators";
 import { HeroesService } from "../../../core/services/heroes.service";
 import * as _ from 'lodash';
@@ -24,8 +23,8 @@ import { HeroModel } from "../../../models/hero.model";
         return this.heroesService.getHeroes()
           .pipe(
             map(heroes => {
-              const hero = _.find(heroes, hero => hero._name === control.value);
-              // if username is already taken
+              const hero = _.find(heroes, (hero:HeroModel) => hero._name.toLowerCase() === control.value.toLowerCase());
+              // if hero name exists and the input was modified 
               if (hero!==undefined && control.pristine === false) {
                 // return error
                 return { 'heroNameExists': true};
@@ -40,8 +39,8 @@ import { HeroModel } from "../../../models/hero.model";
           return  this.store.select('heroState')
             .pipe(
               map(heroes => {
-                const hero = _.find(heroes.heroes, hero => hero._name === control.value);
-                // if username is already taken
+                const hero = _.find(heroes.heroes, (hero:HeroModel) => hero._name.toLowerCase() === control.value.toLowerCase());
+                // if hero name exists and the input was modified 
                 if (hero!==undefined && control.pristine === false) {
                   // return error
                   return { 'heroNameExists': true};
@@ -49,5 +48,5 @@ import { HeroModel } from "../../../models/hero.model";
               })
             );
         };
-      }
+    }
 }
