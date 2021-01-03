@@ -22,7 +22,6 @@ export class HeroesService {
     }
 
     getHeroes() {
-        let idTemporal = 1;
         return this.getHeroesPowers().pipe(
             concatMap(powers => {
                 return this.http.get(this.url)
@@ -30,8 +29,6 @@ export class HeroesService {
                             map((resp:HeroModel[]) => {
                                 this.heroes = resp;                           
                                 this.heroes.forEach((hero: HeroModel) => {
-                                    hero._id = idTemporal;
-                                    idTemporal = idTemporal + 1;
                                     let power = _.find(powers, power => power.heroId == hero._id);
                                     (power !== undefined) ? hero._power = power.power : hero._power = 'NA';                      
                                 });
