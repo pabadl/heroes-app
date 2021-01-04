@@ -1,7 +1,11 @@
 {
   "navbar": {
     "language": "Language",
-    "favorite": "Favorite Hero"
+    "favorite": "Favorite Hero",
+    "search-dropdown":{
+      "name": "Name",
+      "nickname": "Nickname"
+    }
   },
   "heroes-dashboard": {
     "height": "Height",

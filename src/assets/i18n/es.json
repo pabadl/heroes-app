@@ -1,7 +1,11 @@
 {
   "navbar": {
     "language": "Lenguaje",
-    "favorite": "Héroe Favorito"
+    "favorite": "Héroe Favorito",
+    "search-dropdown":{
+      "name": "Nombre",
+      "nickname": "Apodo"
+    }
   },
   "heroes-dashboard": {
     "height": "Estatura",

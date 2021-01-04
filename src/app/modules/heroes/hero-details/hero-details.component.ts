@@ -30,11 +30,10 @@ export class HeroDetailsComponent implements OnInit {
                 private store: Store<AppState>,
                 private router: Router,
                 private heroNamevalidators: HeroNameValidators,
-                private heroHeightvalidators: HeroHeightValidators) {   
-                this.createForm();
-    }
+                private heroHeightvalidators: HeroHeightValidators) {}
 
     ngOnInit(): void{
+        this.createForm();
         this.heroId = this.route.snapshot.paramMap.get('id');
         this.store.select('heroState').subscribe(data => {
             this.heroes = data.heroes;

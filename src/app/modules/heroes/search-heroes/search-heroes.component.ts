@@ -2,18 +2,16 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HeroModel } from '../../../models/hero.model';
 import { Store } from '@ngrx/store';
-import * as HeroActions from '../../../store/hero.actions';
 import { AppState } from '../../../store/app.reducers';
 import { HeroesService } from '../../../core/services/heroes.service';
-import { Subscription } from 'rxjs';
-import { IfStmt } from '@angular/compiler';
 
+import { Subscription } from 'rxjs';
 @Component({
     selector: 'app-search-heroes',
     templateUrl: './search-heroes.component.html',
     styleUrls: ['./search-heroes.component.scss']
 })
-export class SearchHeroesComponent implements OnInit {
+export class SearchHeroesComponent implements OnInit, OnDestroy {
 
     storedHeroes: HeroModel[] = [];
     heroesFound: HeroModel[] = [];
@@ -44,5 +42,9 @@ export class SearchHeroesComponent implements OnInit {
                 this.heroesFound= this.heroesService.getHeroByNickName(this.storedHeroes, this.searchParam);
             }      
         });
+    }
+
+    ngOnDestroy(){
+        this.searchCriteriaObservablRef.unsubscribe();
     }
 }
