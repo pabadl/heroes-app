@@ -1,0 +1,47 @@
+
+<app-go-to-dashboard-button></app-go-to-dashboard-button>
+<div class="container">
+    <form class="form" [formGroup]="form" autocomplete="off" (ngSubmit)="editHero()">
+        <div class="form-header">
+            <div class="form-title">{{ 'hero-details.hero-details' | translate }}</div>
+            <div class="favorite-hero">
+                <label class="favorite-hero-label">{{ 'hero-details.favorite' | translate }}</label>
+                <input class="input-star" id="star" type="radio" name="start" [(checked)]="favoriteHero" (click)="favoriteHero=!favoriteHero">
+                <label class="label-star" for="star">
+                    <fa-icon [icon]="starIcon"></fa-icon>    
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+        </div>
+        <div class="form-group">
+            <label>{{ 'hero-details.nickname' | translate }}</label>
+            <input type="text" formControlName="_nickname">
+            <small *ngIf="formControlIsInvalid('_nickname')" class="form-validation-error" >{{ 'hero-details.nickname' | translate }} {{ 'hero-details.form-validation-error.generic' | translate }}</small>
+        </div>
+        <div class="form-group">
+            <label>{{ 'hero-details.name' | translate }}</label>
+            <input type="text" formControlName="_name">
+            <small *ngIf="formControlIsInvalid('_name')" class="form-validation-error" >{{ 'hero-details.name' | translate }} {{ 'hero-details.form-validation-error.name' | translate }}</small>
+        </div>
+        <div class="form-group">
+            <label>{{ 'hero-details.height' | translate }}</label>
+            <input type="text" formControlName="_height">
+            <small *ngIf="formControlIsInvalid('_height')" class="form-validation-error" >{{ 'hero-details.height' | translate }} {{ 'hero-details.form-validation-error.height' | translate }}</small>
+        </div>
+        <div class="form-group">
+            <label>{{ 'hero-details.power' | translate }}</label>
+            <input type="text" formControlName="_power">
+            <small *ngIf="formControlIsInvalid('_power')" class="form-validation-error" >{{ 'hero-details.power' | translate }} {{ 'hero-details.form-validation-error.generic' | translate }}</small>
+        </div>
+        <div class="form-group">
+            <label>{{ 'hero-details.rating' | translate }}</label>
+            <app-hero-rating formControlName="_rating"></app-hero-rating>
+            <small *ngIf="formControlIsInvalid('_rating')" class="form-validation-error" >{{ 'hero-details.rating' | translate }} {{ 'hero-details.form-validation-error.generic' | translate }}</small>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="submit-button btn btn-primary w-100">{{ 'hero-details.edit' | translate }}</button>
+        </div> 
+    </form>
+</div>
+

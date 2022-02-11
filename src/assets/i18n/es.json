@@ -1,0 +1,33 @@
+{
+  "navbar": {
+    "language": "Lenguaje",
+    "favorite": "Héroe Favorito",
+    "search-dropdown":{
+      "name": "Nombre",
+      "nickname": "Apodo"
+    }
+  },
+  "heroes-dashboard": {
+    "height": "Estatura",
+    "power": "Poder"
+  },
+  "hero-details": {
+    "hero-details": "Detalles del héroe",
+    "favorite": "Héroe Favorito",
+    "nickname": "Apodo",
+    "name": "Nombre",
+    "height": "Estatura",
+    "power": "Poder",
+    "rating": "Calificación del héroe",
+    "edit": "Editar",
+    "form-validation-error":{
+      "generic":"es obligatorio",
+      "name": "es obligatorio y no puede existir",
+      "height": "es obligatorio y debe ser un número"
+    }
+  },
+  "search-heroes":{
+    "no-results": "No se encontraron resultados con el término:"
+  },
+  "go-to-dashboard":"Ir al listado de héroes"
+}

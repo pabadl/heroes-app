@@ -1,0 +1,24 @@
+/* Variables */
+$hoverBgColor : #ff3b3b;
+$hoverBgColor2: #ffffff;
+
+.dashboard-button {
+    font-family: sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: rgba(#000000, 0.6);
+    text-align: center;
+    outline: none;
+    border: 0;
+    box-shadow: 0px 0px 10px #000000;
+    margin: 20px 20px; 
+    background: linear-gradient(130deg, $hoverBgColor 0%, $hoverBgColor2 100%);
+    border-radius: 4px;
+    padding: 12px 20px;
+    display: inline-block;   
+    cursor: pointer;
+    &:active {
+        transform: translateY(4px);
+    }
+}

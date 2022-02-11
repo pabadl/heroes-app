@@ -1,0 +1,23 @@
+<div class="navbar">
+    <div class="labels-group">
+        <div class="navbar-group">
+            <div class=".navbar-language-dropdown">
+                <label class="navbar-label">{{ 'navbar.language' | translate }} </label>
+                <select class="navbar-language-dropdown" #langSelect (change)="translate.use(langSelect.value)">
+                    <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="navbar-group" *ngIf="favoriteHero$ | async">
+            <label class="navbar-label">{{ 'navbar.favorite' | translate }}: {{favoriteHero$ | async}} </label>
+        </div>
+    </div>
+    
+    <div class="navbar-group-search">
+        <select class="dropdown" [(ngModel)]="searchCriteria">
+            <option value="name">{{ 'navbar.search-dropdown.name' | translate }}</option>
+            <option value="nickname">{{ 'navbar.search-dropdown.nickname' | translate }}</option>
+          </select>
+        <input id="search-hero-input" class="search-input" type="search" placeholder="Search Hero" (keyup)="searchHero($event)">
+    </div>
+</div>

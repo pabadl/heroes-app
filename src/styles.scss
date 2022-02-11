@@ -1,0 +1,27 @@
+body {
+    background-image: url(../src/assets/img/avengers.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #000000;
+    margin: 0;
+}
+
+h1 {
+    font-size: 50px;
+    color: #ffffff;
+}
+
+@media only screen and (max-width: 768px) {
+    h1 {
+      font-size: 20px;
+      color: #ffffff;
+    }
+  }
+
+@media only screen and (max-width: 700px) {
+    body {
+        background-image: url(../src/assets/img/avengers.jpg);
+    }
+}

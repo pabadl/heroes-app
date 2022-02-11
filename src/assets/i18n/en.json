@@ -1,0 +1,33 @@
+{
+  "navbar": {
+    "language": "Language",
+    "favorite": "Favorite Hero",
+    "search-dropdown":{
+      "name": "Name",
+      "nickname": "Nickname"
+    }
+  },
+  "heroes-dashboard": {
+    "height": "Height",
+    "power": "Power"
+  },
+  "hero-details": {
+    "hero-details": "Hero Details",
+    "favorite": "Favorite Hero",
+    "nickname": "Nickname",
+    "name": "Name",
+    "height": "Height",
+    "power": "Power",
+    "rating": "Hero rating",
+    "edit": "Edit",
+    "form-validation-error":{
+      "generic":"is mandatory",
+      "name": "is mandatory and can not exist",
+      "height": "is mandatory and must be a number"
+    }
+  },
+  "search-heroes":{
+    "no-results": "There are not results with the term:"
+  },
+  "go-to-dashboard":"Go to heroes List"
+}

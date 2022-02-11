@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    justify-content: center;
+    padding: 100px 50px;
+
+    .box{
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-around;
+        justify-content: space-around;
+        padding: 15px;
+    }  
+}

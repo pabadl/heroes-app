@@ -1,0 +1,164 @@
+/* Variables */
+$hoverBgColor : #ff3b3b;
+$hoverBgColor2: #ffffff;
+
+.container{
+    display: flex;
+    justify-content: center;
+    padding: 100px 100px;
+}
+
+.form {
+    background: rgba(255, 255, 255, 0.8);
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-content: space-between;
+    justify-content: center;
+    flex-direction: column;
+    padding: 25px;
+    font-family: sans-serif;
+
+    .form-header {
+        display: flex;
+        flex-direction:row;
+        align-items: center;
+        padding: 20px 0 40px 0;
+
+        .form-title {  
+            width: 70%;
+            color: rgba(#000000, 0.6);;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            margin-right: 20px;
+          }
+
+        .favorite-hero {
+            width: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            .favorite-hero-label { 
+                color: rgba(#000000, 0.6);;
+                text-transform: uppercase;
+                letter-spacing: .2em;
+            }
+
+            .input-star{
+                display: none;
+                &:checked ~ .label-star {
+                    color: orange;
+                }
+            }
+        
+            .label-star {
+                color: grey;
+                font-size: 25px;
+                &:hover{
+                    color:orange;
+                    cursor: pointer;
+                    transition: 1s all;
+                    transform: rotate(360deg);
+                }
+            }
+        }
+    }
+
+    .form-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0 0 20px;
+
+        label {
+            display: block;
+            margin: 0 0 10px;
+            color: rgba(#000000, 0.6);;
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            width: 100%;
+        }
+
+        input {
+            outline: none;
+            display: block;
+            background: #ffffff;
+            width: 100%;
+            border: 0;
+            border-radius: 4px;
+            box-sizing: border-box;
+            padding: 12px 20px;
+            line-height: inherit;
+        }
+
+        .form-validation-error{
+            margin-top: 5px;
+            color: red;
+            width: 100%;
+        }
+
+        .submit-button {
+            outline: none;
+            background: linear-gradient(130deg, $hoverBgColor 0%, $hoverBgColor2 100%);
+            box-shadow: 0px 0px 5px #000000;
+            width: 100%;
+            border: 0;
+            border-radius: 4px;
+            padding: 12px 20px;
+            text-transform: uppercase;
+            margin: 10px 0;
+            letter-spacing: .1em;
+            color: rgba(#000000, 0.6);
+            cursor: pointer;
+            &:active {
+                transform: translateY(4px);
+            }
+        }
+
+        .rating{
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: row-reverse;
+            width: 100%;
+
+            input{
+                display: none;
+                &:checked ~ label {
+                    color: orange;
+                }
+            }
+
+            label {
+                color: grey;
+                padding: 0 2px;
+                &:hover{
+                    color:orange;
+                    cursor: pointer;
+                    transition: 1s all;
+                    transform: rotate(360deg);
+                }
+                &:hover ~ label {
+                    color: orange;
+                    transition: 1s all;
+                    transform: rotate(360deg);
+                } 
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .container{
+        display: flex;
+        justify-content: center;
+        padding: 100px 10px;
+    }
+
+    .form {
+        width: 100%;
+    }
+}
